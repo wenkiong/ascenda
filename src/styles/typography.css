@@ -1,0 +1,26 @@
+
+@theme {
+    /* Font */
+    --font-sans: "Lexend", "Verdana", sans-serif;
+
+    /* Font size and line height */
+    --text-xs--line-height: 1.125rem;
+    --text-sm--line-height: 1.375rem;
+    --text-base--line-height: 1.5rem;
+    --text-lg--line-height: 1.75rem;
+    --text-xl--line-height: 1.75rem;
+    --text-2xl--line-height: 2rem;
+    --text-3xl--line-height: 2.25rem;
+    --text-4xl--line-height: 2.5rem;
+    --text-5xl--line-height: 3.75rem;
+    --text-6x: 3.5rem;
+    --text-6xl--line-height: 4.375rem;
+    --text-7xl: 4rem;
+    --text-7xl--line-height: 5rem;
+    --text-8xl: 4.5rem;
+    --text-8xl--line-height: 5.625rem;
+    --text-9xl: 6rem;
+    --text-9xl--line-height: 6rem;
+    --text-10xl: 8rem;
+    --text-10xl--line-height: 8rem;
+}
