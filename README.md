@@ -1,89 +1,62 @@
+# Ascenda UI Mockups
 
-# Ascenda UI Mockups – Live Prototyping Hub
+This repository hosts live UI mockups for Ascenda's Rewards portal and other related products. Built using [Vite](https://vitejs.dev/), [React](https://reactjs.org/), [Tailwind CSS](https://tailwindcss.com/), and [Framer Motion](https://www.framer.com/motion/), the goal is to rapidly prototype and test accessibility-first, responsive user interfaces.
 
-This repository is a central workspace for **Ascenda-related UI prototypes**, built using [Vite](https://vitejs.dev/), [Tailwind CSS](https://tailwindcss.com/), and [Motion](https://motion.dev/). It provides interactive mockups for design testing, animation exploration, and live stakeholder previews.
+## 🔧 Tech Stack
 
-## 📌 Purpose
+- **Vite** – Fast development build tool
+- **React** – Component-based UI
+- **Tailwind CSS** – Utility-first styling
+- **Framer Motion** – Declarative animation library
+- **GitHub Actions** – CI/CD for automated deployment
 
-- Host UI prototypes for **Ascenda Rewards Portal** and other related projects
-- Test design ideas, interactions, and basic flows
-- Centralize all front-end exploration in a single live environment
-- Share dynamic previews with stakeholders and developers
+## 📁 Project Structure
 
----
-
-## 🧱 Structure
-
-The homepage acts as an **index of projects**, while each project lives in its own subdirectory.
+The homepage (`/`) acts as an index of prototype subpages.
 
 ```
 src/
-├── projects/
-│   ├── rewards/          # Mockups for Rewards Portal
-│   ├── travel/           # (Example) Travel experience testing
-│   └── ...               # Add more as needed
-├── components/           # Shared reusable components
-├── layouts/              # Shared page/layout wrappers
-├── pages/
-│   └── index.tsx         # Project index homepage
-├── styles/               # Tailwind config / base styles
-└── App.tsx
+├── routes/              # Project routes (e.g. rc-homepage, tenant-onboarding)
+│   ├── rc-homepage/
+│   ├── rc-travel/
+│   └── ...
+├── components/          # Reusable UI components
+├── styles/              # Global styles and tokens
+│   ├── colors.css       # Color, typography, spacing tokens
+│   └── ...
+├── App.tsx              # App entry with <Routes>
+└── main.tsx             # Renders root <App>
 ```
 
----
+## 🚀 Deployment
 
-## 🛠 Tech Stack
+- Production build is triggered automatically via **GitHub Actions** on `git push`
+- Output is deployed to **GitHub Pages**: [`https://ascenda.design`](https://ascenda.design)
+- Custom domain is handled via `CNAME` file and DNS configured on **Porkbun**
 
-- ⚡ [Vite](https://vitejs.dev/) – Lightning-fast dev environment
-- ⚛️ [React](https://react.dev/) – UI library
-- 🌀 [Tailwind CSS](https://tailwindcss.com/) – Utility-first CSS
-- 🎞️ [Motion](https://motion.dev/) – React animation library
-- 🧠 [TypeScript](https://www.typescriptlang.org/) – Type-safe components
+## 🌐 Custom Domain
 
----
+This project uses a custom domain: `ascenda.design`. Make sure the `vite.config.ts` file has:
 
-## 🧪 Getting Started
-
-### 1. Install dependencies
-
-```bash
-npm install
+```ts
+export default defineConfig({
+  base: '/',
+})
 ```
 
-### 2. Run development server
+A `CNAME` file containing the domain is located in `/public`.
 
-```bash
-npm run dev
-```
+## 🛠 Accessibility-First Design
 
-### 3. Build for production
+The mockups are built to test for:
+- `prefers-reduced-motion`
+- `prefers-contrast`
+- semantic HTML
+- keyboard navigation
+- screen reader compatibility
 
-```bash
-npm run build
-```
+Framer Motion respects `prefers-reduced-motion` automatically out of the box.
 
-### 4. Preview production build
+## 📬 Contact
 
-```bash
-npm run preview
-```
-
----
-
-## 🌍 Deployment
-
-This repo can be deployed using:
-- **GitHub Pages** (default for static preview)
-- Or any static host like Netlify or Vercel
-
-Deployment will serve the index (`/`) as the project overview, with each project accessible via subpaths (e.g., `/rewards`, `/travel`, etc).
-
----
-
-## 📎 Notes
-
-- This is a **UI/UX prototyping space only** — no backend logic or production APIs.
-- All designs are specific to **Ascenda** and intended for internal feedback and iteration.
-- Maintained by [Wen Kiong](mailto:your-email@example.com)
-
----
+For questions or feedback, reach out to: [wenkiong.neo@ascenda.com](mailto:wenkiong.neo@ascenda.com)
