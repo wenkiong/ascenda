@@ -5,7 +5,7 @@ import path from "path";
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/ascenda/', // 👈 Matches repo name
+  base: '/', // 👈 Matches repo name
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),
