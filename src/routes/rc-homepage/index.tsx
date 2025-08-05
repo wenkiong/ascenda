@@ -5,6 +5,7 @@ const RCHomepage = () => {
         <>
         <h1>This is RC Homepage</h1>
         <Spinner size={48} />
+        <h2>test</h2>
         </>
     )
 }

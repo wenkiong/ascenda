@@ -172,5 +172,5 @@
     --color-white-light: oklch(100% 0 0 / 0.35);
     --color-white-medium: oklch(100% 0 0 / 0.6);
     --color-white-dark: oklch(100% 0 0 / 0.75);
-    --color-white: var(--color-neutral-900);
+    --color-white: var(--color-neutral-100);
 }

@@ -1,0 +1,256 @@
+:root {
+  --total-length: 0;
+  --duration-letter: 325ms;
+  --duration-s: 400ms;
+  --duration-c: 350ms;
+  --duration-e: 350ms;
+  --duration-n: 375ms;
+  --duration-d: 450ms;
+  --duration-a: 500ms;
+  --duration-grow: 800ms;
+  --duration-disappear: 400ms;
+  --delay-initial: 950ms;
+  --delay-letter: 120ms;
+  --delay-disappear: 2800ms;
+  --ease-tile: cubic-bezier(0.33, 0.00, 0.34, 1.00);
+  --ease-line: cubic-bezier(.6, 0, .2, 1);
+  --ease-letter: cubic-bezier(.65, 0, .2, 1);
+  --ease-grow: cubic-bezier(.9,0,.4,1);
+  --ease-disappear: cubic-bezier(.79, 0, .67, 1);
+  --ease-parrallex: cubic-bezier(0.17, 0.17, 0.00, 1.00);
+}
+
+.tile {
+  animation-timing-function: var(--ease-tile);
+  transition: transform 0.2s var(--ease-parrallex);
+}
+
+.welcome {
+  animation: fade;
+  animation-duration: 1000ms;
+}
+
+.custombrand {
+  animation: fade, custombrand;
+  animation-duration: 835ms;
+}
+
+.redemptionanalytics {
+  animation: fade, righttoleft;
+  animation-duration: 1000ms;
+}
+
+.pointscash {
+  animation: fade, toptobottom;
+  animation-duration: 835ms;
+}
+
+.virginaustralia {
+  animation: fade, lefttoright;
+  animation-duration: 1000ms;
+}
+
+.singaporeairlines {
+  animation: fade, sq;
+  animation-duration: 835ms;
+}
+
+.eligibleusers {
+  animation: fade, lefttoright;
+  animation-duration: 835ms;
+}
+
+.ascendalogo {
+  width: 61px;
+  animation: 
+  grow var(--duration-grow) var(--ease-grow) calc(var(--delay-initial) * 0.8) forwards,
+  disappear var(--duration-disappear) var(--ease-disappear) var(--delay-disappear) forwards;
+}
+
+.ascendalogo>svg {
+  position: absolute;
+}
+
+.aa,
+.aaa {
+  top: 5.42px;
+}
+
+
+.line {
+  stroke-dasharray: var(--total-length);
+  stroke-dashoffset: var(--total-length);
+  animation: draw 1000ms var(--ease-line);
+  animation-timing-function: var(--ease-line);
+  animation-fill-mode: forwards;
+}
+
+.s {
+  top: 22.12px;
+  left: 62px;
+  translate: 0 100%;
+  animation: reveal;
+  animation-duration: var(--duration-s);
+  animation-timing-function: var(--ease-letter);
+  animation-fill-mode: forwards;
+  animation-delay: var(--delay-initial);
+}
+
+.c {
+  top: 22.08px;
+  left: 101px;
+  translate: 0 100%;
+  animation: reveal;
+  animation-duration: var(--duration-c);
+  animation-timing-function: var(--ease-letter);
+  animation-fill-mode: forwards;
+  animation-delay: calc(var(--delay-initial) + var(--delay-letter) * .75);
+}
+
+.e {
+  --multiplier: 1.2;
+  top: 22.12px;
+  left: 140px;
+  translate: 0 100%;
+  animation: reveal;
+  animation-duration: var(--duration-e);
+  animation-timing-function: var(--ease-letter);
+  animation-fill-mode: forwards;
+  animation-delay: calc(var(--delay-initial) + var(--delay-letter) * var(--multiplier));
+}
+
+.n {
+  --multiplier: 1.35;
+  top: 22.04px;
+  left: 188px;
+  translate: 0 100%;
+  animation: reveal;
+  animation-duration: var(--duration-n);
+  animation-timing-function: var(--ease-letter);
+  animation-fill-mode: forwards;
+  animation-delay: calc(var(--delay-initial) + var(--delay-letter) * var(--multiplier));
+}
+
+.d {
+  --multiplier: 1.6;
+  left: 232px;
+  translate: 0 100%;
+  animation: reveal;
+  animation-duration: var(--duration-d);
+  animation-timing-function: var(--ease-letter);
+  animation-fill-mode: forwards;
+  animation-delay: calc(var(--delay-initial) + var(--delay-letter) * var(--multiplier));
+}
+
+.a {
+  --multiplier: 2.25;
+  top: 22.1px;
+  left: 283px;
+  translate: 0 100%;
+  animation: reveal;
+  animation-duration: var(--duration-a);
+  animation-timing-function: var(--ease-letter);
+  animation-fill-mode: forwards;
+  animation-delay: calc(var(--delay-initial) + var(--delay-letter) * var(--multiplier));
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
+@keyframes custombrand {
+  from {
+    translate: 30px 0;
+  }
+
+  to {
+    translate: 0
+  }
+}
+
+@keyframes toptobottom {
+  from {
+    translate: 0 30px;
+  }
+
+  to {
+    translate: 0;
+  }
+}
+
+@keyframes lefttoright {
+  from {
+    translate: -40px 0;
+  }
+
+  to {
+    translate: 0;
+  }
+}
+
+@keyframes righttoleft {
+  from {
+    translate: 40px 0;
+  }
+
+  to {
+    translate: 0;
+  }
+}
+
+@keyframes sq {
+  from {
+    translate: -30px 0;
+  }
+
+  to {
+    translate: 0;
+  }
+}
+
+@keyframes draw {
+  from {
+    stroke-dashoffset: var(--total-length);
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes reveal {
+  from {
+    translate: 0 100%;
+  }
+
+  to {
+    translate: 0;
+  }
+}
+
+@keyframes grow {
+  from {
+    width: 61px;
+  }
+
+  to {
+    width: 324px;
+  }
+}
+
+@keyframes disappear {
+  from {
+    opacity: 1;
+    scale: 1;
+  }
+  to {
+    opacity: 0;
+    scale: .75;
+  }
+}
