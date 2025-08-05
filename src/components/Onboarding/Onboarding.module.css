@@ -15,7 +15,7 @@
   --ease-tile: cubic-bezier(0.33, 0.00, 0.34, 1.00);
   --ease-line: cubic-bezier(.6, 0, .2, 1);
   --ease-letter: cubic-bezier(.65, 0, .2, 1);
-  --ease-grow: cubic-bezier(.9,0,.4,1);
+  --ease-grow: cubic-bezier(.9, 0, .4, 1);
   --ease-disappear: cubic-bezier(.79, 0, .67, 1);
   --ease-parrallex: cubic-bezier(0.17, 0.17, 0.00, 1.00);
 }
@@ -62,13 +62,22 @@
 
 .ascendalogo {
   width: 61px;
-  animation: 
-  grow var(--duration-grow) var(--ease-grow) calc(var(--delay-initial) * 0.8) forwards,
-  disappear var(--duration-disappear) var(--ease-disappear) var(--delay-disappear) forwards;
+  animation:
+    grow var(--duration-grow) var(--ease-grow) calc(var(--delay-initial) * 0.8) forwards,
+    disappear var(--duration-disappear) var(--ease-disappear) var(--delay-disappear) forwards;
 }
 
 .ascendalogo>svg {
   position: absolute;
+}
+
+.s,
+.c,
+.e,
+.n,
+.d,
+.a {
+  fill: var(--color-cloudburst-500)
 }
 
 .aa,
@@ -78,6 +87,7 @@
 
 
 .line {
+  stroke: var(--color-cloudburst-500);
   stroke-dasharray: var(--total-length);
   stroke-dashoffset: var(--total-length);
   animation: draw 1000ms var(--ease-line);
@@ -249,6 +259,7 @@
     opacity: 1;
     scale: 1;
   }
+
   to {
     opacity: 0;
     scale: .75;
